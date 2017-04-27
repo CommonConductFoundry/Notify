@@ -1,37 +1,105 @@
-## Welcome to GitHub Pages
+# Welcome to Notify()
 
-You can use the [editor on GitHub](https://github.com/CommonConductFoundry/Notify/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Overview
+Notify() is a expandable notification/alerting plug-in for jQuery with flexability such as, but not limited to:
+- specifying you alert's title
+- defining the alert type [default, error, warning, success, notice]
+- if the alert is dismissable
+Get started and give it a try by adding Notify() to your project.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# Docs
+## Empty usage
+The following code:
+```javascript
+<script src="src/to/notify.js"></script>
+<script>
+  notify(
+    "Title", // Alert Title
+    "Content", // Alert Content
+    "demo_alert_class", // Alert Class
+    "demo_alert_id", // Alert ID
+    true, // Dismissable
+    "http://www.example.com", // Alert Link src
+    "A link"  // Alert Link Text
+  );
+</script>
+```
+Renders
+```html
+<div class="alert demo_alert_class" id="demo_alert_id">
+  <div class="container">
+    <button class="dismiss" id="dismissdemo_alert_id">&times;</button>
+    <div class="alert-title">Title</div>
+    <div class="alert-message">
+      <p>Content</p>
+    </div>
+    <div class="alert-link">
+      <a target="_blank" title="A link" href="http://www.example.com">A link</a>
+    </div>
+  </div>
+</div>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Example usage
+Below is an example of a simple cookie consent notification. The user is able to dismiss this notification.
+```javascript
+<script src="src/to/notify.js"></script>
+<script>
+  notify(
+    "This site uses cookies", // Alert Title
+    "By continuing to use this site you consent to the use of cookies on your device as described in our cookie policy unless you have disabled them.", // Alert Content
+    "notice", // Alert Class
+    "cookie-alert", // Alert ID
+    true, // Dismissable
+    "https://www.example.com/help/cookies", // Alert Link src
+    "Read out cookie policy"  // Alert Link Text
+  );
+</script>
+```
+Renders:
+```html
+<div class="alert notice" id="cookie-alert">
+	<div class="container">
+		<button class="dismiss" id="dismisscookie-alert">&times;</button>
+		<div class="alert-title">
+			This site uses cookies
+		</div>
+		<div class="alert-message">
+			<p>By continuing to use this site you consent to the use of cookies on your device as described in our cookie policy unless you have disabled them.</p>
+		</div>
+		<div class="alert-link">
+			<a href="https://www.example.com/help/cookies" target="_blank" title="Read out cookie policy">Read out cookie policy</a>
+		</div>
+	</div>
+</div>
+```
+Perhaps you need a notification that you don't want the user to be able to dismiss?
+```javascript
+<script src="src/to/notify.js"></script>
+<script>
+  notify(
+    "Planned maintenance", // Alert Title
+    "This website will be unavailable from 01-01-2020 until 04-01-2020 - sorry for any trouble this may cause.", // Alert Content
+    "warning", // Alert Class
+    "maintenance-alert", // Alert ID
+    false, // Dismissable
+    false, // Alert Link src
+    false  // Alert Link Text
+  );
+</script>
+```
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CommonConductFoundry/Notify/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Renders:
+```html
+<div class="alert warning" id="maintenance-alert">
+	<div class="container">
+		<div class="alert-title">
+			Planned maintenance
+		</div>
+		<div class="alert-message">
+			<p>This website will be unavailable from 01-01-2020 until 04-01-2020 - sorry for any trouble this may cause.</p>
+		</div>
+	</div>
+</div>
+```
