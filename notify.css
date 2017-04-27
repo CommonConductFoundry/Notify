@@ -1,0 +1,98 @@
+/*
+We encourage you to develop your own css file for the best possible experience for your site.
+*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.container {
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.alert {
+	overflow: hidden;
+	position: relative;
+	z-index: 501;
+	background-color: #fff;
+	color: #2c3c41;
+	border-top: 4px solid;
+	padding: 1em 0;
+}
+.alert.error {
+	border-color: #d3222a;
+	background-color: #fff0f0;
+}
+.alert.success {
+	border-color: #009661;
+	background-color: #f4fffb;
+}
+.alert.notice {
+	border-color: #0072cf;
+	background-color: #f3faff;
+}
+.alert.warning {
+	border-color: #ecac00;
+	background-color: #fff5dc;
+}
+.alert .alert-message, .alert .alert-message p {
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.3em;
+}
+.alert a {
+	color: inherit;
+	text-decoration: underline;
+	transition: none;
+}
+.alert a:hover {
+	text-decoration: none;
+	opacity: .8;
+}
+.alert .alert-title {
+	font-weight: 500;
+	letter-spacing: .5px;
+	font-size: 17px;
+	line-height: 1.2;
+	margin-bottom: .25em;
+}
+.alert+.alert {
+	border-top: 1px solid rgba(0, 0, 0, .05);
+}
+.alert:last-of-type, .alert:last-child {
+	box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, .05);
+}
+.alert .alert-link {
+	margin-top: 1em;
+	display: block;
+	position: relative;
+	clear: both;
+}
+.alert .alert-link>a {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAALBAMAAACufOGlAAAAElBMVEWytbe0t7m+wcO+wcMAAAC+wcPAbOgBAAAABXRSTlPu26BgABhfd1AAAAApSURBVAgdYxB2cWFQNXFhcAp2YXBRNWFwcQpmcHFhhdBAPkgcJA9UBwCnGweczi1blAAAAABJRU5ErkJggg==");
+	background-repeat: no-repeat;
+	background-position: center left;
+	padding-left: 15px;
+	line-height: 1.25;
+	display: inline-block;
+	font-family: sans-serif;
+}
+.alert .alert-title, .alert .alert-message, .alert .alert-link {
+	margin-right: 40px;
+}
+.alert .dismiss {
+	background: transparent;
+	border: 0;
+	font-size: 25px;
+	padding: 0;
+	line-height: 20px;
+	width: 20px;
+	float: right;
+	cursor: pointer;
+	opacity: .5;
+}
+.alert .dismiss:hover {
+	opacity: 1;
+}
