@@ -6,6 +6,8 @@ Notify() is a expandable notification/alerting plug-in for jQuery with flexibili
 - if the alert is dismissible
 Get started and give it a try by adding Notify() to your project.
 
+[View demo](//fiddle.jshell.net/9dw47kp7/5/embedded/html,result/)
+
 
 # Docs
 ## Empty usage
